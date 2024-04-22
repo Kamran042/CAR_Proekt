@@ -1,0 +1,15 @@
+{
+  "name": "homework_task10",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass assets/scss/style.scss -o assets/css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}

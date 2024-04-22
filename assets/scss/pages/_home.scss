@@ -1,0 +1,331 @@
+@import "../base/typography";
+@import "../layout/footer";
+@import "../layout/header";
+
+main {
+	padding-top: 32px;
+	background-color: $background-color_2;
+}
+.main__conainer {
+	max-width: 1440px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.main__top__box {
+	max-width: 1312px;
+	margin: 0 auto;
+	gap: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+.main__top__card {
+	width: 640px;
+	height: 360px;
+	border-radius: 10px;
+	padding: 24px 0 0 24px;
+	h2 {
+		width: 272px;
+		height: 96px;
+		font-weight: 600;
+		font-size: 32px;
+		line-height: 150%;
+		display: flex;
+		align-items: center;
+		letter-spacing: -0.03em;
+		color: $color_5;
+		flex: none;
+		order: 0;
+		flex-grow: 0;
+	}
+	p {
+		width: 284px;
+		height: 48px;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 150%;
+		display: flex;
+		align-items: center;
+		letter-spacing: -0.02em;
+		color: $color_5;
+		flex: none;
+		order: 1;
+		flex-grow: 0;
+		margin-top: 25px;
+	}
+	button {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 0px 20px;
+		gap: 8px;
+		width: 120px;
+		height: 44px;
+		border-radius: 4px;
+		flex: none;
+		order: 1;
+		flex-grow: 0;
+		font-family: $font-family_1;
+		border: none;
+		font-family: $font-family_1;
+		color: $color_6;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 150%;
+		margin-top: 20px;
+	}
+}
+.main_top_one {
+	background-image: url(/assets/img/BG.png);
+	background-color: $background-color_3;
+	button {
+		background: #3563e9;
+	}
+}
+.main_top_two {
+	background-image: url(/assets/img/BGtw.png);
+	background-color: $background-color_4;
+	button {
+		background-color: $background-color_3;
+	}
+}
+.main_filter {
+	max-width: 1312px;
+	margin: 0 auto;
+	display: flex;
+	padding: 30px 0;
+	justify-content: space-between;
+}
+.main_filter__center {
+	margin: 0 auto;
+}
+.main_filter__card {
+	width: 582px;
+	height: 132px;
+	border-radius: 10px;
+	background-color: $background-color_1;
+	padding: 24px 48px 0;
+}
+.main_filter__card__top {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	h4 {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 24px;
+		letter-spacing: -0.02em;
+		text-align: left;
+	}
+}
+.main_filter__card__tittle {
+	margin-top: 16px;
+	gap: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.main_filter__card__tittle__liniya {
+	background-color: $background-color_5;
+	width: 1px;
+	height: 48px;
+}
+.main_filter__card__tittle__card {
+	h5 {
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 24px;
+		letter-spacing: -0.02em;
+		text-align: left;
+	}
+	p {
+		margin-top: 8px;
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 15.12px;
+		letter-spacing: -0.02em;
+		text-align: left;
+		color: $color_7;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+	}
+}
+.grid__top {
+	max-width: 1312px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 30px;
+	h3 {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 20.16px;
+		text-align: center;
+		width: Fixed (132px) px;
+		height: Fixed (44px) px;
+		padding: 0px 20px 0px 20px;
+		gap: 8px;
+		border-radius: 4px 0px 0px 0px;
+		opacity: 0px;
+		color: $color_8;
+	}
+	p {
+		width: Fixed (104px) px;
+		height: Fixed (44px) px;
+		padding: 0px 20px 0px 20px;
+		gap: 8px;
+		border-radius: 4px 0px 0px 0px;
+		opacity: 0px;
+		font-family: $font-family_3;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 20.16px;
+		text-align: center;
+		color: $color_9;
+	}
+}
+.grid__card {
+	margin: 0 auto;
+	width: 304px;
+	height: 388px;
+	background-color: $background-color_6;
+	border-radius: 10px;
+	padding: 24px;
+}
+.grid__card__top {
+	display: flex;
+	align-items: start;
+	justify-content: space-between;
+}
+.grid__card__top_left {
+	h2 {
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 30px;
+		letter-spacing: -0.03em;
+		text-align: left;
+		color: $color_10;
+	}
+	h3 {
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 21px;
+		letter-spacing: -0.02em;
+		text-align: left;
+		color: $color_7;
+	}
+}
+.grid__card__img {
+	width: 256px;
+	height: 180px;
+	padding: 10px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	img {
+		object-fit: contain;
+		width: 100%;
+		height: 100%;
+	}
+}
+.grid__card__tittle {
+	display: flex;
+	gap: 16px;
+}
+.grid__card__tittle_card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 3px;
+	span {
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 17.64px;
+		text-align: left;
+		color: $color_7;
+		display: flex;
+		align-items: center;
+	}
+}
+.grid__card__price_btn {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 24px;
+	p {
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 25.2px;
+		text-align: left;
+		color: $color_10;
+	}
+	span {
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 17.64px;
+		text-align: left;
+		color: $color_7;
+	}
+	button {
+		width: 116px;
+		height: 44px;
+		top: 320px;
+		left: 164px;
+		padding: 0px 20px 0px 20px;
+		gap: 8px;
+		border-radius: 4px;
+		opacity: 0px;
+		border: none;
+		background-color: $background-color_7;
+		color: $color_6;
+		font-family: $font-family_1;
+		cursor: pointer;
+	}
+	a {
+		cursor: pointer;
+	}
+}
+.grid__card__top_right {
+	button {
+		background: none;
+		border: none;
+		cursor: pointer;
+	}
+}
+.grid__Allcards {
+	display: grid;
+	max-width: 1312px;
+	gap: 32px;
+	margin: 0 auto;
+	grid-template-columns: repeat( auto-fit, minmax(304px, 1fr) );
+}
+
+.finishBtn {
+	margin-top: 64px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 156px;
+	height: 44px;
+	padding: 0px 20px 0px 20px;
+	gap: 8px;
+	border-radius: 4px;
+	opacity: 0px;
+	border: none;
+	background-color: $background-color_7;
+	cursor: pointer;
+	color: $color_6;
+	margin-bottom: 64px;
+	font-family: $font-family_1;
+}
+
+.sonSection {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

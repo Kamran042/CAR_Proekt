@@ -13,14 +13,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/responsiv.css">
     <title>CAR Proekt</title>
   </head>
   <body>
     <header>
       <div class="header_all">
         <div class="header_left">
-          <a href="./home.html"><img src="./img/LogoHeader.png" alt=""></a>
+          <a href="./home.html"><img src="./assets/img/LogoHeader.png" alt=""></a>
           <div class="header_left_search">
             <div class="header_left_search_left">
               <i class="fa-solid fa-magnifying-glass"></i>
@@ -43,7 +44,7 @@
         <div class="header_right">
           <div class="header_right_card"><a href="./wishlist.html"><i class="fa-solid fa-heart"></i></a></div>
           <div class="header_right_card"><a href="./form.html"><i class="fa-solid fa-plus"></i></a></div>
-          <div class="header_right_card"><i class="fa-solid fa-gear"></i></div>
+          <div class="header_right_card nien"><i class="fa-solid fa-gear"></i></div>
 
           <div class="header_right_card">
             <img
@@ -79,15 +80,76 @@
         <section class="main_filter">
           <div class="main_filter__card">
             <div class="main_filter__card__top">
-              <img src="./img/Pick - Up (1).png" alt="" />
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="16" height="16" rx="8" fill="#3563E9" fill-opacity="0.3"/>
+                <circle cx="8" cy="8" r="4" fill="#3563E9"/>
+                </svg>
+              <h4>Pick - Up</h4>                
+            </div>
+            <div class="main_filter__card__tittle">
+              <div class="main_filter__card__tittle__card">
+                <h5>Locations</h5>
+                <p>Select your city <span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.00013 9.79969C6.5918 9.79969 6.18347 9.64219 5.8743 9.33303L2.07097 5.52969C1.9018 5.36053 1.9018 5.08053 2.07097 4.91136C2.24013 4.74219 2.52013 4.74219 2.6893 4.91136L6.49263 8.71469C6.77263 8.99469 7.22763 8.99469 7.50763 8.71469L11.311 4.91136C11.4801 4.74219 11.7601 4.74219 11.9293 4.91136C12.0985 5.08053 12.0985 5.36053 11.9293 5.52969L8.12597 9.33303C7.8168 9.64219 7.40847 9.79969 7.00013 9.79969Z" fill="#1A202C" stroke="#1A202C" stroke-width="0.5"/>
+                  </svg>
+                  </span></p>
+              </div>
+              <div class="main_filter__card__tittle__liniya"></div>
+              <div class="main_filter__card__tittle__card">
+                <h5>Date</h5>
+                <p>Select your date <span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.00013 9.79969C6.5918 9.79969 6.18347 9.64219 5.8743 9.33303L2.07097 5.52969C1.9018 5.36053 1.9018 5.08053 2.07097 4.91136C2.24013 4.74219 2.52013 4.74219 2.6893 4.91136L6.49263 8.71469C6.77263 8.99469 7.22763 8.99469 7.50763 8.71469L11.311 4.91136C11.4801 4.74219 11.7601 4.74219 11.9293 4.91136C12.0985 5.08053 12.0985 5.36053 11.9293 5.52969L8.12597 9.33303C7.8168 9.64219 7.40847 9.79969 7.00013 9.79969Z" fill="#1A202C" stroke="#1A202C" stroke-width="0.5"/>
+                  </svg>
+                  </span></p>
+              </div>
+              <div class="main_filter__card__tittle__liniya"></div>
+              <div class="main_filter__card__tittle__card">
+                <h5>Time</h5>
+                <p>Select your Time <span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.00013 9.79969C6.5918 9.79969 6.18347 9.64219 5.8743 9.33303L2.07097 5.52969C1.9018 5.36053 1.9018 5.08053 2.07097 4.91136C2.24013 4.74219 2.52013 4.74219 2.6893 4.91136L6.49263 8.71469C6.77263 8.99469 7.22763 8.99469 7.50763 8.71469L11.311 4.91136C11.4801 4.74219 11.7601 4.74219 11.9293 4.91136C12.0985 5.08053 12.0985 5.36053 11.9293 5.52969L8.12597 9.33303C7.8168 9.64219 7.40847 9.79969 7.00013 9.79969Z" fill="#1A202C" stroke="#1A202C" stroke-width="0.5"/>
+                  </svg>
+                  </span></p>
+              </div>
             </div>
           </div>
           <div class="main_filter__center">
             <img src="./img/Switch.png" alt="" />
           </div>
-          <div class="main_filter__card">
-            <img src="./img/Drop - Off.png" alt="" />
-          </div>
+            <div class="main_filter__card">
+              <div class="main_filter__card__top">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="16" height="16" rx="8" fill="#5CAFFC" fill-opacity="0.3"/>
+                  <circle cx="8" cy="8" r="4" fill="#54A6FF"/>
+                  </svg>
+                  
+                <h4>Drop - Off</h4>                
+              </div>
+              <div class="main_filter__card__tittle">
+                <div class="main_filter__card__tittle__card">
+                  <h5>Locations</h5>
+                  <p>Select your city <span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.00013 9.79969C6.5918 9.79969 6.18347 9.64219 5.8743 9.33303L2.07097 5.52969C1.9018 5.36053 1.9018 5.08053 2.07097 4.91136C2.24013 4.74219 2.52013 4.74219 2.6893 4.91136L6.49263 8.71469C6.77263 8.99469 7.22763 8.99469 7.50763 8.71469L11.311 4.91136C11.4801 4.74219 11.7601 4.74219 11.9293 4.91136C12.0985 5.08053 12.0985 5.36053 11.9293 5.52969L8.12597 9.33303C7.8168 9.64219 7.40847 9.79969 7.00013 9.79969Z" fill="#1A202C" stroke="#1A202C" stroke-width="0.5"/>
+                    </svg>
+                    </span></p>
+                </div>
+                <div class="main_filter__card__tittle__liniya"></div>
+                <div class="main_filter__card__tittle__card">
+                  <h5>Date</h5>
+                  <p>Select your date <span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.00013 9.79969C6.5918 9.79969 6.18347 9.64219 5.8743 9.33303L2.07097 5.52969C1.9018 5.36053 1.9018 5.08053 2.07097 4.91136C2.24013 4.74219 2.52013 4.74219 2.6893 4.91136L6.49263 8.71469C6.77263 8.99469 7.22763 8.99469 7.50763 8.71469L11.311 4.91136C11.4801 4.74219 11.7601 4.74219 11.9293 4.91136C12.0985 5.08053 12.0985 5.36053 11.9293 5.52969L8.12597 9.33303C7.8168 9.64219 7.40847 9.79969 7.00013 9.79969Z" fill="#1A202C" stroke="#1A202C" stroke-width="0.5"/>
+                    </svg>
+                    </span></p>
+                </div>
+                <div class="main_filter__card__tittle__liniya"></div>
+                <div class="main_filter__card__tittle__card">
+                  <h5>Time</h5>
+                  <p>Select your Time <span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.00013 9.79969C6.5918 9.79969 6.18347 9.64219 5.8743 9.33303L2.07097 5.52969C1.9018 5.36053 1.9018 5.08053 2.07097 4.91136C2.24013 4.74219 2.52013 4.74219 2.6893 4.91136L6.49263 8.71469C6.77263 8.99469 7.22763 8.99469 7.50763 8.71469L11.311 4.91136C11.4801 4.74219 11.7601 4.74219 11.9293 4.91136C12.0985 5.08053 12.0985 5.36053 11.9293 5.52969L8.12597 9.33303C7.8168 9.64219 7.40847 9.79969 7.00013 9.79969Z" fill="#1A202C" stroke="#1A202C" stroke-width="0.5"/>
+                    </svg>
+                    </span></p>
+                </div>
+              </div>
+            </div>
         </section>
         <section class="grid">
           <div class="grid__top">
@@ -98,7 +160,7 @@
           </div>
         </section>
         <section class="sonSection">
-          <button class="finishBtn">Show more car</button>
+          <a href="./form.html"><button class="finishBtn">Show more car</button></a>
         </section>
       </div>
     </main>
@@ -106,7 +168,7 @@
       <div class="footer_into">
         <div class="footer_top">
           <div class="footer_top_left">
-            <img src="./img/Logo.png" alt="" srcset="" />
+            <img src="./assets/img/Logo.png" alt="" srcset="" />
           </div>
           <div class="footer_top_right">
             <ul>
@@ -145,6 +207,6 @@
       </div>
     </footer>
     
-    <script src="./home.js"></script>
+    <script src="./assets/js/home.js"></script>
   </body>
 </html>

@@ -2,7 +2,9 @@ const gridAllcards = document.querySelector(".grid__Allcards");
 let employees = [];
 let wishList = [];
 
-employees = JSON.parse(localStorage.getItem("employees"));
+if(JSON.parse(localStorage.getItem("employees"))){
+  employees = JSON.parse(localStorage.getItem("employees"));
+}
 
 function renderUI() {
   gridAllcards.innerHTML = "";
@@ -15,8 +17,9 @@ function renderUI() {
         <h3>${employees[i].ban}</h3>
       </div>
       <div class="grid__card__top_right" >
-      <button data-id="${employees[i].id}">
+      <button >
         <svg
+          data-id="${employees[i].id}"
           class="svgIcon"
           width="24"
           height="24"
@@ -139,25 +142,28 @@ function deleteCard(id) {
   renderUI();
 }
 
-
 const svgButtons = document.querySelectorAll(".svgIcon");
 
-for (let i = 0; i < svgButtons.length; i++) {
-  svgButtons[i].addEventListener("click", function () {
-    const id = parseInt(svgButtons[i].dataset.id);
+svgButtons.forEach(button => {
+  button.addEventListener("click", function () {
+    const id = parseInt(button.dataset.id);
     const checkCart = employees.find((data) => data.id === id);
     const checkCartIndex = employees.indexOf(checkCart);
-    if (svgButtons[i].style.fill === "red") {
+    if (button.style.fill === "red") {
       console.log(wishList[checkCartIndex]);
       wishList.splice(checkCartIndex, 1);
       localStorage.setItem("wishList", JSON.stringify(wishList));
-      svgButtons[i].style.fill = "transparent";
+      button.style.fill = "transparent";
     } else {
-      svgButtons[i].style.fill = "red";
+      button.style.fill = "red";
       wishList.push(checkCart);
       localStorage.setItem("wishList", JSON.stringify(wishList));
     }
-    console.log(wishList);
     console.log(id);
+
+
   });
-}
+});
+
+
+
