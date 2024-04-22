@@ -15,7 +15,7 @@ function renderUI() {
         <h3>${employees[i].ban}</h3>
       </div>
       <div class="grid__card__top_right" >
-      <button onclick="addCarWishList(${employees[i].id})">
+      <button data-id="${employees[i].id}">
         <svg
           class="svgIcon"
           width="24"
@@ -139,27 +139,25 @@ function deleteCard(id) {
   renderUI();
 }
 
-function addCarWishList(id) {
 
-}
+const svgButtons = document.querySelectorAll(".svgIcon");
 
-const svgIcon = document.querySelectorAll(".svgIcon");
-
-for (let i = 0; i < svgIcon.length; i++) {
-  svgIcon[i].addEventListener("click", function () {
-    const checkCart = employees.find((data) => data.id == i);
+for (let i = 0; i < svgButtons.length; i++) {
+  svgButtons[i].addEventListener("click", function () {
+    const id = parseInt(svgButtons[i].dataset.id);
+    const checkCart = employees.find((data) => data.id === id);
     const checkCartIndex = employees.indexOf(checkCart);
-    if (svgIcon[i].style.fill == "red") {
-      console.log(wishList[i]);
-      wishList.splice(checkCartIndex,1)
+    if (svgButtons[i].style.fill === "red") {
+      console.log(wishList[checkCartIndex]);
+      wishList.splice(checkCartIndex, 1);
       localStorage.setItem("wishList", JSON.stringify(wishList));
-      svgIcon[i].style.fill = "transparent";
+      svgButtons[i].style.fill = "transparent";
     } else {
-      svgIcon[i].style.fill = "red";
+      svgButtons[i].style.fill = "red";
       wishList.push(checkCart);
       localStorage.setItem("wishList", JSON.stringify(wishList));
     }
     console.log(wishList);
-console.log(i);
+    console.log(id);
   });
 }
