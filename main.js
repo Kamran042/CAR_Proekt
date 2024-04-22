@@ -86,12 +86,3 @@ function resetForm() {
     image.value="";
 }
 
-
-
-
-
-
-
-
-
-ewfweferfwefwefwefwefweewe
