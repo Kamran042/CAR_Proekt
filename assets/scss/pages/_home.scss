@@ -272,8 +272,8 @@ main {
 		text-align: left;
 		color: $color_7;
 	}
-	button {
-		width: 116px;
+	&_delete {
+		width: 120px;
 		height: 44px;
 		top: 320px;
 		left: 164px;
@@ -286,6 +286,27 @@ main {
 		color: $color_6;
 		font-family: $font-family_1;
 		cursor: pointer;
+	}
+	&_buy {
+		width: 44px;
+		height: 44px;
+		top: 320px;
+		left: 164px;
+		gap: 8px;
+		border-radius: 50%;
+		opacity: 0px;
+		border: none;
+		background-color: $background-color_7;
+		color: $color_6;
+		font-family: $font-family_1;
+		cursor: pointer;
+		background-color: green;
+	}
+	&_into{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
 	}
 	a {
 		cursor: pointer;
@@ -328,4 +349,12 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.wishlist-item {
+	color: red !important; }
+  
+.wishlist_i i{
+	color: grey;
+	font-size: 25px;
 }

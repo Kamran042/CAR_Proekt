@@ -13,7 +13,7 @@ $color_12: rgba(26, 32, 44, 1);
 $color_13: #fff;
 $font-family_1: "Plus Jakarta Sans", sans-serif;
 $font-family_2: "Plus Jakarta Sans";
-$font-family_3: Plus Jakarta Sans;
+$font-family_3: "Plus Jakarta Sans";
 $font-family_4: Arial, sans-serif;
 $background-color_1: white;
 $background-color_2: #f6f7f9;
@@ -46,5 +46,4 @@ $border-color_6: #bd2130;
 body {
 	font-family: $font-family_1;
 	background-color: $background-color_8;
-	font-family: $font-family_4;
 }

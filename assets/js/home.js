@@ -1,10 +1,72 @@
 const gridAllcards = document.querySelector(".grid__Allcards");
-let employees = [];
-let wishList = [];
+let employees;
+let wishList;
+let basketItems;
 
-if(JSON.parse(localStorage.getItem("employees"))){
+if(localStorage.getItem("employees")){
   employees = JSON.parse(localStorage.getItem("employees"));
+}else{
+  employees = []
+  localStorage.setItem('employees',JSON.stringify(employees))
 }
+
+if(localStorage.getItem("wishlist")){
+  wishList = JSON.parse(localStorage.getItem("wishlist"));
+}else{
+  wishList = []
+  localStorage.setItem('wishlist',JSON.stringify(wishList))
+}
+
+if (localStorage.getItem("basketItems")) {
+  basketItems = JSON.parse(localStorage.getItem("basketItems"));
+} else {
+  basketItems = [];
+  localStorage.setItem("basketItems", JSON.stringify(basketItems));
+}
+
+const checkWishlistItem = (id) => {
+  const target = wishList.find((item) => item.id == id);
+  if (target) {
+    return "wishlist-item";
+  } else {
+    return "";
+  }
+};
+
+
+const addToWishlist = (id) => {
+  console.log('Wishlis work');
+  const target = employees.find((car) => car.id == id);
+  const wishlistTarget = wishList.find((item) => item.id == id);
+  if (!wishlistTarget) {
+    Toastify({
+      text: "Card Wish Liste elave olundu",
+      className: "info",
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      },
+    }).showToast();
+    wishList.push(target);
+    localStorage.setItem("wishlist", JSON.stringify(wishList));
+    checkWishlistItem(id);
+    renderUI();
+  } else {
+    Toastify({
+      text: "Card wish Listden silindi",
+      className: "danger",
+      style: {
+        background: 'rgb(180,58,58)',
+        background: 'linear-gradient(90deg, rgba(180,58,58,1) 0%, rgba(253,29,29,1) 50%, rgba(252,158,69,1) 100%)',
+},
+    }).showToast();
+    let indexOfTarget = wishList.indexOf(wishlistTarget);
+    wishList.splice(indexOfTarget, 1);
+    localStorage.setItem("wishlist", JSON.stringify(wishList));
+    renderUI();
+  }
+  console.log(wishList);
+};
+
 
 function renderUI() {
   gridAllcards.innerHTML = "";
@@ -17,29 +79,11 @@ function renderUI() {
         <h3>${employees[i].ban}</h3>
       </div>
       <div class="grid__card__top_right" >
-      <button >
-        <svg
-          data-id="${employees[i].id}"
-          class="svgIcon"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12.62 20.81C12.28 20.93 11.72 20.93 11.38 20.81C8.48 19.82 2 15.69 2 8.68998C2 5.59998 4.49 3.09998 7.56 3.09998C9.38 3.09998 10.99 3.97998 12 5.33998C13.01 3.97998 14.63 3.09998 16.44 3.09998C19.51 3.09998 22 5.59998 22 8.68998C22 15.69 15.52 19.82 12.62 20.81Z"
-            stroke="#90A3BF"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-        </button>
+      <button class="wishlist_i " onclick="addToWishlist(${employees[i].id})"><i class="fa-solid fa-heart ${checkWishlistItem(employees[i].id)}"></i></button>
       </div>
     </div>
     <div class="grid__card__img">
-      <img src="${employees[i].img}" alt="" />
+      <img src="${employees[i].img}" alt="..." />
     </div>
     <div class="grid__card__tittle">
       <div class="grid__card__tittle_card">
@@ -124,14 +168,19 @@ function renderUI() {
       </div>
     </div>
     <div class="grid__card__price_btn">
-      <p>$${employees[i].price}/ <span>day</span></p>
-      <button onclick="deleteCard(${employees[i].id})">Delete Card</button>
+      <p>$${employees[i].price}</p>
+      <div class="grid__card__price_btn_into">
+        <button class="grid__card__price_btn_delete" onclick="deleteCard(${employees[i].id})">Delete Card</button>
+        <button class="grid__card__price_btn_buy"  onclick="addToBasket(${employees[i].id})"><i class="fa-solid fa-cart-shopping"></i></button>
+      </div>
     </div>
   </div>
     
     `;
   }
 }
+
+
 renderUI();
 
 function deleteCard(id) {
@@ -142,28 +191,35 @@ function deleteCard(id) {
   renderUI();
 }
 
-const svgButtons = document.querySelectorAll(".svgIcon");
+function addToBasket(id) {
+  let basketItem = basketItems.find((x) => x.item.id == id);
+  if (!basketItem) {
+    Toastify({
+        text: "Card baskete add olundu",
+        className: "danger",
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+      }).showToast();
+    let target = employees.find((car) => car.id == id);
+    let newBasketItem = {
+      item: target,
+      count: 1,
+      totalPrice:  target.price,
+    };
+    basketItems.push(newBasketItem);
+    localStorage.setItem("basketItems", JSON.stringify(basketItems));
 
-svgButtons.forEach(button => {
-  button.addEventListener("click", function () {
-    const id = parseInt(button.dataset.id);
-    const checkCart = employees.find((data) => data.id === id);
-    const checkCartIndex = employees.indexOf(checkCart);
-    if (button.style.fill === "red") {
-      console.log(wishList[checkCartIndex]);
-      wishList.splice(checkCartIndex, 1);
-      localStorage.setItem("wishList", JSON.stringify(wishList));
-      button.style.fill = "transparent";
-    } else {
-      button.style.fill = "red";
-      wishList.push(checkCart);
-      localStorage.setItem("wishList", JSON.stringify(wishList));
-    }
-    console.log(id);
-
-
-  });
-});
-
-
-
+  } else {
+    Toastify({
+        text: "Card baskete add olundu",
+        className: "danger",
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+      }).showToast();
+    basketItem.count++;
+    basketItem.totalPrice = basketItem.count * basketItem.item.price;
+    localStorage.setItem("basketItems", JSON.stringify(basketItems));
+  }
+}

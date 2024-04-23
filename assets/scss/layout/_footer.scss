@@ -54,6 +54,7 @@ footer {
 			text-align: left;
 			color: $color_11;
 			list-style: none;
+			cursor: pointer;
 		}
 		h3 {
 			color: $color_12;
@@ -96,5 +97,6 @@ footer {
 		line-height: 24px;
 		letter-spacing: -0.02em;
 		font-weight: bold;
+		cursor: pointer;
 	}
 }

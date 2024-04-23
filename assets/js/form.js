@@ -37,6 +37,13 @@ submitBtn.addEventListener('click',(e)=>{
     if(markVal && imgVal && banVal && oilVal && gearVal && capasityVal && priceVal && imgVal  ){
         createEmployee(markVal,banVal,imgVal,oilVal,gearVal,capasityVal,priceVal, imgVal)
         resetForm()
+        Toastify({
+            text: "Card Home Page elave olundu",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+          }).showToast();
     }else{
         alert('Inputlari doldurun')
     }
@@ -62,19 +69,9 @@ const getDataFromUser = () => {
 function createEmployee(mark,ban,image,oil,gear,capasity,price, img){
     const newEmployee = new Employee(mark,ban,image,oil,gear,capasity,price,img)
     employees.push(newEmployee)
-    // renderUI(employees)
     static = [...employees]
 
 }
-
-function deleteEmployee(id){
-    const target = employees.find(x => x.id == id)
-    const indexOfTArget = employees.indexOf(target)
-    employees.splice(indexOfTArget,1)
-    renderUI(employees)
-}
- 
-
 
 function resetForm() {
     mark.value = "";
