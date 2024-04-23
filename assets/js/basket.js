@@ -1,4 +1,6 @@
 const listElement = document.getElementById("list");
+const gridWhenNoCard = document.querySelector(".grid__when_noCard");
+
 let basketItems;
 if (localStorage.getItem("basketItems")) {
   basketItems = JSON.parse(localStorage.getItem("basketItems"));
@@ -8,22 +10,29 @@ if (localStorage.getItem("basketItems")) {
 }
 function renderUI(list) {
   let innerHTML = "";
-  for (let i = 0; i < list.length; i++) {
-    innerHTML += `
-        <tr>
-        <th scope="row">${i + 1}</th>
-        <td><img width="50px" height="50px" src="${list[i].item.img}"/></td>
-        <td>${list[i].item.mark}</td>
-        <td>${list[i].totalPrice} AZN</td>
-        <td><button class="btn btn-danger" onclick="deleteItemFromWishlist(${
-          list[i].item.id
-        })">delete</button></td>
-        <td>${list[i].count}</td>
-        <td><button class="btn btn-primary" onclick="plusFormWishlist(${
-          list[i].item.id
-        })" >add</button></td>
-      </tr>
-        `;
+  console.log(list.length);
+  if(list.length == 0){
+    gridWhenNoCard.innerHTML=`
+    <h2 style="text-align: center;">Add to car <a href="./home.html">click here.</a></h2>
+    `
+  }else{
+    for (let i = 0; i < list.length; i++) {
+        innerHTML += `
+            <tr>
+            <th scope="row">${i + 1}</th>
+            <td><img width="50px" height="50px" src="${list[i].item.img}"/></td>
+            <td>${list[i].item.mark}</td>
+            <td>${list[i].totalPrice} AZN</td>
+            <td><button class="btn btn-danger" onclick="deleteItemFromWishlist(${
+              list[i].item.id
+            })">delete</button></td>
+            <td>${list[i].count}</td>
+            <td><button class="btn btn-primary" onclick="plusFormWishlist(${
+              list[i].item.id
+            })" >add</button></td>
+          </tr>
+            `;
+      }
   }
   listElement.innerHTML = innerHTML;
 }
