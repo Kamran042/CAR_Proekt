@@ -13,7 +13,7 @@ function renderUI(list) {
   console.log(list.length);
   if(list.length == 0){
     gridWhenNoCard.innerHTML=`
-    <h2 style="text-align: center;">Add to car <a href="./home.html">click here.</a></h2>
+    <h2 style="text-align: center; font-size: 24px;">Add to car <a href="./home.html">click here.</a></h2>
     `
   }else{
     for (let i = 0; i < list.length; i++) {
